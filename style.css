@@ -1,0 +1,212 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin:0;
+} 
+
+/* Typo */
+  .body {
+    font-family: 'Playfair Display', serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-left: 100px;
+    margin-right:100px;
+  }
+  
+  a {
+    color: inherit;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size:31px;
+    line-height: 1.2;
+
+  }
+
+  h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    color:#2FA1DB;
+    padding-bottom:20px;
+  }
+
+  p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+  }
+  
+  /* Layout */
+
+
+.row {
+  padding-top: 90px;
+  }
+
+  .paragraph{
+    padding-top:20px;
+      }
+
+      .column {
+        float: left;
+        width: 50%;
+        padding:15px;
+      }
+      
+        /* Clear floats after the columns */
+      .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+      
+        .columnentrepreneurship {
+          float: left;
+      width:33%;
+        }
+      
+        .columnbooks {
+          float: left;
+          width:16.5%;
+        }
+      
+        .columnbooks1 {
+          float: right;
+          width:33%;
+        }
+      
+        /* CTA */
+      
+      .button-wrapper{
+        display:flex;
+        text-align:center;
+        padding-top:30px;
+      }
+      
+        .button {
+          display:inline-block;
+          justify-content: center;
+          padding:0.5em 1.2em; 
+          width: auto; 
+          background: #eaeaea; 
+          color: #000; 
+          font-weight: 500; 
+          font-size: 1em;
+          border-radius: 20px; 
+          text-decoration: none;
+          border:none;
+        }
+      
+        .button:hover{
+          background: #F2FBFE; 
+          color: #356C88; 
+        }
+      .plusicons{
+          float:right;
+          margin-right:-30px;
+      
+      }
+      
+      .tesla{
+          margin-left:50px;
+          padding-bottom:25px;
+      }
+        .grey {
+          color:#707070;
+        }
+      
+        .solid {
+          border-bottom: 10px solid #66CEF5;
+        }
+
+  /* Navbar */
+  #navbar {
+    background: white;
+    color: rgb(13, 26, 38);
+    position: fixed;
+    top: 0;
+    height: 80px;
+    line-height: 80px;
+    width: 90%;
+    z-index: 10;
+  }
+  
+  .nav-wrapper {
+    margin: auto;
+    text-align: center;
+      } 
+ 
+  .logo {
+    float: left;
+    height: 80px;
+  }
+  
+  #navbar ul {
+    display: inline-block;
+    float: none;
+    list-style: none;
+    margin-right: 14px;
+    margin-top: -2px;
+    text-align: right;
+    transition: transform 0.5s ease-out;
+    -webkit-transition: transform 0.5s ease-out;
+  } @media(max-width: 640px) {
+      #navbar ul {
+        display: none;
+      }
+    } 
+  
+  #navbar li {
+    display: inline-block;
+  }
+  
+  #navbar li a {
+    color: #000;
+    display: block;
+    font-size: 0.7em;
+    height: 50px;
+    letter-spacing: 1px;
+    margin: 0 20px;
+    padding: 0 4px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+
+  }
+  
+  #navbar li a:hover {
+    color: #2FA1DB;
+  }
+
+/* QUOTE SECTION */
+.quote {
+  text-align: centerleft;
+  margin-left:39%;
+  margin-right:39%;
+}
+
+/*blue text*/
+  .blue {
+    color: #2FA1DB;
+  }
+
+
+  .bg-footer {
+    background-color: #555555;
+    padding:10px;
+    margin-top: 90px;
+    width:100%;
+    position:relativeabsolute;
+    text-align: center;
+    color:#fff;
+    border: 0;
+    bottom:0;
+    left:0;
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+  }
