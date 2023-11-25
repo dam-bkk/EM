@@ -4,9 +4,9 @@
   padding: 0;
   margin: 0;
 }
-#page-container{
-  position:relative;
-  min-height:150vh;
+#page-container {
+  position: relative;
+  min-height: 150vh;
 }
 
 #content-wrap {
@@ -54,7 +54,7 @@ p {
   height: 67px;
   line-height: 67px;
   width: 100%;
-  z-index: 0;
+  z-index: 1000;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
   -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%)
@@ -62,6 +62,10 @@ p {
 }
 
 .nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
   margin: auto;
   text-align: center;
 }
@@ -73,16 +77,12 @@ p {
 }
 .menu {
   margin-right: 5em;
-}
-#navbar ul {
   display: flex;
-  float: right;
   list-style: none;
-  margin-left: 14px;
-  margin-top: -2px;
-  text-align: left;
-  transition: transform 0.5s ease-out;
-  -webkit-transition: transform 0.5s ease-out;
+}
+
+.menu li {
+  margin-right: 15px;
 }
 
 #navbar li {
@@ -92,8 +92,8 @@ p {
 #navbar li a {
   color: #000;
   display: block;
-  font-size: 0.7em;
-  height: 50px;
+  font-size: 0.9em;
+  height: 67px;
   letter-spacing: 1px;
   margin: 0 20px;
   padding: 0 4px;
@@ -106,39 +106,78 @@ p {
   color: #2fa1db;
 }
 
+@media (max-width: 700px) {
+  #navbar {
+    position: fixed;
+    top: 0;
+    height: 67px;
+    line-height: 67px;
+    width: 100%;
+    background-color: #000000;
+  }
+
+  .nav-btn {
+    display: block; /* Show burger icon */
+    color: white;
+  }
+
+  .logo {
+    margin-left: 0em;
+    padding: 0em;
+  }
+  .menu {
+    display: none; /* Hide the menu items */
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-right: 5em;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  /* Show menu when checkbox is checked (for mobile) */
+  #nav-check:checked ~ .nav-wrapper .menu {
+    display: flex;
+  }
+}
 /* Hero */
 
-  .business { 
-    display: flex; 
-    flex-direction: row; 
-    padding-top:3em;
-    margin:0px;
-    height:auto;
-} 
+.business {
+  display: flex;
+  flex-direction: row;
+  padding-top: 3em;
+  margin: 0px;
+  height: auto;
+}
 
-.textbusiness { 
-    width: 50%; 
-    padding:8em 4em 2em 5em;
-    background-color: pink; 
-    text-align: left; 
-    color: black; 
-    height:auto;
-    line-height: 1.8em;
-} 
+.textbusiness {
+  width: 50%;
+  padding: 8em 4em 2em 6em;
+  text-align: left;
+  color: black;
+  height: auto;
+  line-height: 1.8em;
+}
 
 .textbusiness p {
-  margin-top:30px;
-  margin-right:8em;
+  margin-top: 30px;
+  margin-right: 8em;
 }
 
-.imagemusk { 
-    width: 50%; 
-    padding:5em 5em 0em 0em;
+.imagemusk {
+  width: 50%;
+  padding: 5em 5em 0em 0em;
 }
 
-.imagemusk img{
-display: block;
-object-fit: auto;
+.imagemusk img {
+  display: block;
+  object-fit: auto;
 }
 
 .button-wrapper {
@@ -173,193 +212,137 @@ object-fit: auto;
 }
 
 @media (max-width: 640px) {
-  .business { 
-    display: flex; 
-    flex-direction: column; 
-    padding:0em;
-    margin:0px;
-    height:auto;
+  .business {
+    display: flex;
+    flex-direction: column;
+    padding: 0em;
+    margin: 0px;
+    height: auto;
   }
-  .textbusiness { 
-    width: 100%; 
-    padding:auto ;
-    background-color: pink; 
-    text-align: left; 
-    color: black; 
-    height:auto;
+  .textbusiness {
+    width: 100%;
+    padding-left: 2em;
+    padding-right: 2em;
+    text-align: left;
+    color: black;
+    height: auto;
     line-height: 1.4em;
-} 
-.imagemusk { 
-  width: 100%; 
-  padding:5em 0em 0em 0em;
-}
-.textbusiness p {
-  padding-top:30px;
-  margin:auto;
-}
+  }
+  .imagemusk {
+    width: 100%;
+    padding: 0em;
+    overflow-x: hidden;
+  }
+  .textbusiness p {
+    padding-top: 30px;
+    margin: auto;
+  }
+  .button-wrapper {
+    display: flex;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em 1.2em;
+  }
 }
 /* QUOTE */
 
-.quote { 
-  display: flex; 
-  flex-direction: column; 
-  padding:5em 0em;
+.quote {
+  display: flex;
+  flex-direction: column;
+  padding: 5em 0em;
+}
+.quote-wrap {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 30%;
+  text-align: left;
+}
+.quote img {
+  text-align: left;
+}
 
-  text-align:center;
-  background-color:#ccff00;
-  }
-  .quote-wrap { 
-    display: flex; 
-    flex-direction: column; 
-    margin:auto;
-    width: 30%; 
-    text-align:left;
-    background-color:#fff;
-    }
-
-  .quote img {
-    text-align:left;
-  }
-  
-  /* blue text */
-  .blue {
-    color: #2fa1db;
-  }
+/* blue text */
+.blue {
+  color: #2fa1db;
+}
 .quote h1 {
   line-height: 1.4em;
 }
-  @media (max-width: 640px) {
-
-    .quote { 
-      display: flex; 
-      flex-direction: column; 
-      padding:3em 0em;
-      text-align:center;
-      background-color:#ccff00;
-      }
-      .quote-wrap { 
-        display: flex; 
-        flex-direction: column; 
-        margin:auto;
-        width: 80%; 
-        text-align:center;
-        background-color:#fff;
-        }
-    
-      .quote img {
-        text-align:center;
-      }
-      
-      /* blue text */
-      .blue {
-        color: #2fa1db;
-      }
-    .quote h1 {
-      line-height: 1.4em;
-    }
+@media (max-width: 640px) {
+  .quote {
+    padding: 3em 0em;
   }
+  .quote-wrap {
+    width: 80%;
+    text-align: center;
+  }
+  .quote img {
+    text-align: center;
+  }
+
+  .quote h1 {
+    line-height: 1.4em;
+  }
+}
 
 /* Entrepreneurship */
 
+.entrepreneurship {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  padding: 3em 6em;
+}
 
-.entrepreneurship { 
-  display: flex; 
-  flex-direction: row; 
-  height:auto;
-} 
+.column {
+  width: 50%;
+  box-sizing: border-box;
+}
 
-.textentrepreneurship { 
-  width: 50%; 
-  padding:5em 4em 2em 5em;
-  background-color: pink; 
-  text-align: left; 
-  color: black; 
-  height:auto;
+.grid-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.grid-column img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .column {
+    width: 100%;
+  }
+}
+
+.textentrepreneurship {
+  width: 50%;
+  padding: 3em 4em 2em 5em;
+  text-align: left;
+  color: black;
+  height: auto;
   line-height: 1.8em;
-} 
+}
 
 .textentrepreneurship p {
-margin-top:30px;
-margin-right:3em;
-}
-
-.founding { 
-  width: 50%; 
-  display: flex;
-  flex-wrap:wrap; 
-}
-
-.founding img {
-  width: 300px;
-  display: block;
+  margin-top: 30px;
+  margin-right: 3em;
 }
 
 .button-wrapper {
-display: flex;
-text-align: center;
-padding-top: 30px;
+  display: flex;
+  text-align: center;
+  padding: 20px 0px 30px 0px;
 }
 
 .button {
-display: inline-block;
-justify-content: center;
-padding: 0.5em 1.2em;
-width: auto;
-background: #eaeaea;
-color: #000;
-font-weight: 500;
-font-size: 1em;
-border-radius: 20px;
-text-decoration: none;
-border: none;
-}
-
-.button:hover {
-background: #f2fbfe;
-color: #356c88;
-}
-
-
-@media (max-width: 640px) {
-  .entrepreneurship { 
-    display: flex; 
-    flex-direction: column-reverse; 
-    height:auto;
-  } 
-  
-  .textentrepreneurship { 
-    width: 100%; 
-    padding:auto ;
-    background-color: pink; 
-    text-align: left; 
-    color: black; 
-    height:auto;
-    line-height: 1.4em;
-  } 
-  
-  .textentrepreneurship p {
-  margin-top:30px;
-  margin-right:3em;
-  }
-  
-  .founding { 
-    width: 50%; 
-    display: flex;
-    flex-wrap:wrap; 
-  }
-  
-  .founding img {
-    width: 300px;
-    display: block;
-  }
-  
-  .button-wrapper {
-  display: flex;
-  text-align: center;
-  padding-top: 30px;
-  }
-  
-  .button {
   display: inline-block;
   justify-content: center;
   padding: 0.5em 1.2em;
@@ -371,11 +354,45 @@ color: #356c88;
   border-radius: 20px;
   text-decoration: none;
   border: none;
-  }
-  
-  .button:hover {
+}
+
+.button:hover {
   background: #f2fbfe;
   color: #356c88;
+}
+
+@media (max-width: 640px) {
+  .entrepreneurship {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    padding: 1em;
+    margin: 0px;
+  }
+
+  .textentrepreneurship {
+    width: 100%;
+    padding: 3em 2em 2em 2em;
+    text-align: left;
+    color: black;
+    height: auto;
+    line-height: 1.4em;
+  }
+
+  .textentrepreneurship p {
+    margin: 1em 0em;
+  }
+
+  .button-wrapper {
+    display: flex;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em 1.2em;
   }
 }
 
@@ -384,7 +401,7 @@ color: #356c88;
   background-color: #555555;
   padding: 15px;
   width: 100%;
-  margin:auto;
+  margin: auto;
   position: absolute;
   text-align: center;
   color: #fff;
