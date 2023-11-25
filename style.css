@@ -4,6 +4,14 @@
   padding: 0;
   margin: 0;
 }
+#page-container{
+  position:relative;
+  min-height:150vh;
+}
+
+#content-wrap {
+  padding-bottom: 3rem;
+}
 
 /* Typo */
 
@@ -27,63 +35,111 @@ h2 {
   padding-bottom: 20px;
 }
 
-p {
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 17px;
-  font-weight: 300;
-}
-
 h3 {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 25px;
   font-weight: 300;
 }
 
-/* Layout */
-
-.row {
-  padding-top: 90px;
-  flex-direction: raw;
+p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 300;
 }
 
-.paragraph {
-  padding-top: 20px;
+/* Navbar */
+#navbar {
+  position: fixed;
+  top: 0;
+  height: 67px;
+  line-height: 67px;
+  width: 100%;
+  z-index: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%)
+    brightness(140%);
 }
 
-.column {
+.nav-wrapper {
+  margin: auto;
+  text-align: center;
+}
+
+.logo {
   float: left;
-  width: 50%;
-  padding: 15px;
+  height: 67px;
+  margin-left: 5em;
 }
-
-.column3 {
-  float: left;
-  width: 25%;
-  padding: 15px;
+.menu {
+  margin-right: 5em;
 }
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.columnentrepreneurship {
-  float: left;
-  width: 33%;
-}
-
-.columnbooks {
-  float: left;
-  width: 16.5%;
-}
-
-.columnbooks1 {
+#navbar ul {
+  display: flex;
   float: right;
-  width: 33%;
+  list-style: none;
+  margin-left: 14px;
+  margin-top: -2px;
+  text-align: left;
+  transition: transform 0.5s ease-out;
+  -webkit-transition: transform 0.5s ease-out;
 }
 
-/* CTA */
+#navbar li {
+  display: inline-block;
+}
+
+#navbar li a {
+  color: #000;
+  display: block;
+  font-size: 0.7em;
+  height: 50px;
+  letter-spacing: 1px;
+  margin: 0 20px;
+  padding: 0 4px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#navbar li a:hover {
+  color: #2fa1db;
+}
+
+/* Hero */
+
+  .business { 
+    display: flex; 
+    flex-direction: row; 
+    padding-top:3em;
+    margin:0px;
+    height:auto;
+} 
+
+.textbusiness { 
+    width: 50%; 
+    padding:8em 4em 2em 5em;
+    background-color: pink; 
+    text-align: left; 
+    color: black; 
+    height:auto;
+    line-height: 1.8em;
+} 
+
+.textbusiness p {
+  margin-top:30px;
+  margin-right:8em;
+}
+
+.imagemusk { 
+    width: 50%; 
+    padding:5em 5em 0em 0em;
+}
+
+.imagemusk img{
+display: block;
+object-fit: auto;
+}
 
 .button-wrapper {
   display: flex;
@@ -109,291 +165,231 @@ h3 {
   background: #f2fbfe;
   color: #356c88;
 }
-.plusicons {
-  float: right;
-  margin-right: -30px;
-}
 
-.tesla {
-  margin-left: 50px;
-  padding-bottom: 25px;
-}
-.grey {
-  color: #707070;
-}
-
-.solid {
-  border-bottom: 10px solid #66cef5;
-  margin-left: -50px;
+.solidlinemusk {
+  border-top: 10px solid #66cef5;
+  margin-left: -2em;
   display: absolute;
 }
 
-/* Navbar */
-#navbar {
-  position: fixed;
-  top: 0;
-  height: 67px;
-  line-height: 80px;
-  width: 100%;
-  z-index: 0;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%)
-    brightness(140%);
-}
-
-.nav-wrapper {
-  margin: auto;
-  text-align: center;
-}
-
-.logo {
-  float: left;
-  height: 80px;
-  margin-left: 100px;
-}
-.menu {
-  margin-right: 100px;
-}
-#navbar ul {
-  display: flex;
-  float: right;
-  list-style: none;
-  margin-left: 14px;
-  margin-top: -2px;
-  text-align: left;
-  transition: transform 0.5s ease-out;
-  -webkit-transition: transform 0.5s ease-out;
-}
 @media (max-width: 640px) {
-  #navbar ul {
-    display: none;
+  .business { 
+    display: flex; 
+    flex-direction: column; 
+    padding:0em;
+    margin:0px;
+    height:auto;
+  }
+  .textbusiness { 
+    width: 100%; 
+    padding:auto ;
+    background-color: pink; 
+    text-align: left; 
+    color: black; 
+    height:auto;
+    line-height: 1.4em;
+} 
+.imagemusk { 
+  width: 100%; 
+  padding:5em 0em 0em 0em;
+}
+.textbusiness p {
+  padding-top:30px;
+  margin:auto;
+}
+}
+/* QUOTE */
+
+.quote { 
+  display: flex; 
+  flex-direction: column; 
+  padding:5em 0em;
+
+  text-align:center;
+  background-color:#ccff00;
+  }
+  .quote-wrap { 
+    display: flex; 
+    flex-direction: column; 
+    margin:auto;
+    width: 30%; 
+    text-align:left;
+    background-color:#fff;
+    }
+
+  .quote img {
+    text-align:left;
+  }
+  
+  /* blue text */
+  .blue {
+    color: #2fa1db;
+  }
+.quote h1 {
+  line-height: 1.4em;
+}
+  @media (max-width: 640px) {
+
+    .quote { 
+      display: flex; 
+      flex-direction: column; 
+      padding:3em 0em;
+      text-align:center;
+      background-color:#ccff00;
+      }
+      .quote-wrap { 
+        display: flex; 
+        flex-direction: column; 
+        margin:auto;
+        width: 80%; 
+        text-align:center;
+        background-color:#fff;
+        }
+    
+      .quote img {
+        text-align:center;
+      }
+      
+      /* blue text */
+      .blue {
+        color: #2fa1db;
+      }
+    .quote h1 {
+      line-height: 1.4em;
+    }
+  }
+
+/* Entrepreneurship */
+
+
+.entrepreneurship { 
+  display: flex; 
+  flex-direction: row; 
+  height:auto;
+} 
+
+.textentrepreneurship { 
+  width: 50%; 
+  padding:5em 4em 2em 5em;
+  background-color: pink; 
+  text-align: left; 
+  color: black; 
+  height:auto;
+  line-height: 1.8em;
+} 
+
+.textentrepreneurship p {
+margin-top:30px;
+margin-right:3em;
+}
+
+.founding { 
+  width: 50%; 
+  display: flex;
+  flex-wrap:wrap; 
+}
+
+.founding img {
+  width: 300px;
+  display: block;
+}
+
+.button-wrapper {
+display: flex;
+text-align: center;
+padding-top: 30px;
+}
+
+.button {
+display: inline-block;
+justify-content: center;
+padding: 0.5em 1.2em;
+width: auto;
+background: #eaeaea;
+color: #000;
+font-weight: 500;
+font-size: 1em;
+border-radius: 20px;
+text-decoration: none;
+border: none;
+}
+
+.button:hover {
+background: #f2fbfe;
+color: #356c88;
+}
+
+
+@media (max-width: 640px) {
+  .entrepreneurship { 
+    display: flex; 
+    flex-direction: column-reverse; 
+    height:auto;
+  } 
+  
+  .textentrepreneurship { 
+    width: 100%; 
+    padding:auto ;
+    background-color: pink; 
+    text-align: left; 
+    color: black; 
+    height:auto;
+    line-height: 1.4em;
+  } 
+  
+  .textentrepreneurship p {
+  margin-top:30px;
+  margin-right:3em;
+  }
+  
+  .founding { 
+    width: 50%; 
+    display: flex;
+    flex-wrap:wrap; 
+  }
+  
+  .founding img {
+    width: 300px;
+    display: block;
+  }
+  
+  .button-wrapper {
+  display: flex;
+  text-align: center;
+  padding-top: 30px;
+  }
+  
+  .button {
+  display: inline-block;
+  justify-content: center;
+  padding: 0.5em 1.2em;
+  width: auto;
+  background: #eaeaea;
+  color: #000;
+  font-weight: 500;
+  font-size: 1em;
+  border-radius: 20px;
+  text-decoration: none;
+  border: none;
+  }
+  
+  .button:hover {
+  background: #f2fbfe;
+  color: #356c88;
   }
 }
 
-#navbar li {
-  display: inline-block;
-}
-
-#navbar li a {
-  color: #000;
-  display: block;
-  font-size: 0.7em;
-  height: 50px;
-  letter-spacing: 1px;
-  margin: 0 20px;
-  padding: 0 4px;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-#navbar li a:hover {
-  color: #2fa1db;
-}
-
-/* QUOTE SECTION */
-.quote {
-  text-align: center;
-  padding: 20% 10%;
-  margin-right: 33%;
-  background-color: #cacaca;
-  border-radius: 400px;
-}
-
-.quote:hover {
-  background-color: #707070;
-  transition: transform 0.5s ease-out;
-  -webkit-transition: transform 0.5s ease-out;
-}
-
-/* blue text */
-.blue {
-  color: #2fa1db;
-}
-
 /* FOOTER */
-.bg-footer {
+#footer {
   background-color: #555555;
   padding: 15px;
   width: 100%;
-  position: relative;
+  margin:auto;
+  position: absolute;
   text-align: center;
   color: #fff;
   border: 0;
   bottom: 0;
   left: 0;
   box-sizing: border-box;
-}
-
-.business:not(.solid) {
-  margin-left: 100px;
-  margin-right: 100px;
-}
-.stats {
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
-.core-tech {
-  margin: 0px 80px 0px 110px;
-}
-
-.technology {
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
-.quote2 {
-  margin-left: 100px;
-  margin-right: 100px;
-}
-.entrepreneurship {
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
-.books {
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 90px;
-}
-
-.col-biz {
-  padding: 120px 200px 0px 0px;
-}
-
-.col-tech {
-  padding-top: 250px;
-}
-
-.col-entre {
-  padding-top: 180px;
-}
-
-.bg-corner {
-  background-image: url(images/bg-corner-top.png);
-  background-position: right;
-  background-repeat: no-repeat;
-}
-
-.bg-dots {
-  background-image: url(images/bg-dots.svg);
-  background-position: right;
-  background-repeat: no-repeat;
-}
-
-.bg-dots2 {
-  background-image: url(images/bg-dots.svg);
-  background-position: left;
-  background-repeat: no-repeat;
-}
-
-.bg-corner2 {
-  background-image: url(images/corner-bottom.png);
-  background-position: bottom;
-  background-repeat: no-repeat;
-}
-
-/* CARDS */
-
-.container {
-  width: 800px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-gap: 15px;
-  margin: 0 auto;
-}
-
-.card {
-  position: relative;
-  width: 180px;
-  height: 250px;
-  margin: 0 auto;
-  background: #fff;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-}
-
-.card .face {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.card .face.face1 {
-  box-sizing: border-box;
-  padding: 20px;
-}
-
-.card .face.face1 h2 {
-  margin: 0;
-  padding: 0;
-}
-
-.card .face.face1 .content {
-  font-size: 1.2em;
-  margin: 0;
-  padding: 0 0 1em 0;
-  font-weight: 500;
-}
-
-.card .face.face2 {
-  background: #111;
-  transition: 0.5s;
-}
-
-.card:nth-child(1) .face.face2 {
-  background: linear-gradient(135deg, #3503ad, #2fa1db);
-  border-radius: 15px;
-}
-
-.card:nth-child(2) .face.face2 {
-  background: linear-gradient(45deg, #2fa1db, #ccff00);
-  border-radius: 15px;
-}
-
-.card:nth-child(3) .face.face2 {
-  background: linear-gradient(135deg, #ccff00, #e91e63);
-  border-radius: 15px;
-}
-
-.card:nth-child(4) .face.face2 {
-  background: linear-gradient(45deg, #e91e63, #3503ad);
-  border-radius: 15px;
-}
-
-.card:hover .face.face2 {
-  height: 60px;
-  border-radius: 0 0 15px 15px;
-}
-
-.card .face.face2:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px 0 0 15px;
-}
-
-.card .face.face2 h2 {
-  margin: 0;
-  padding: 0;
-  font-size: 4em;
-  color: #fff;
-  transition: 0.5s;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.card:hover .face.face2 h2 {
-  font-size: 2em;
 }
